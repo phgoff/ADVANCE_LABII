@@ -1,0 +1,9 @@
+Create Agent 
+ UDP agent sender  	-->attach node0
+ NULL agent receiver	-->attach node1
+
+cbr (traffic)
+* $cbr_(0) attach-agent $udp_(0) cbr ;attach agent - UDP 
+
+
+set val(nn)   4  //เพิ่มโหนดตรงนี้

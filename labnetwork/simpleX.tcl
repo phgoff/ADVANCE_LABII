@@ -94,15 +94,14 @@ for {set i 0} {$i< $val(nn) } {incr i} {
 #$ns_ at 0.0 "$node_($i) setdest 10.0 10.0 0.0"
 #}
 
-
+# ----------------------------------------------------
 set udp_(0) [new Agent/UDP]
 $udp_(0) set fid_ 0
 $ns_ attach-agent $node_(0) $udp_(0)
-#agent2
+#Add Agent2
 set udp_(1) [new Agent/UDP]
 $udp_(1) set fid_ 0
 $ns_ attach-agent $node_(3) $udp_(1)
-
 # -----------------------------------------------------
 # Null Agent to receive Packets for Node 0
 set null_(0) [new Agent/Null]
@@ -122,7 +121,7 @@ $cbr_(0) set maxpkts_ 10000
 $cbr_(0) attach-agent $udp_(0)
 $ns_ connect $udp_(0) $null_(0) 
 $ns_ at $start_time "$cbr_(0) start"
-# cbr 1
+#Add cbr1 traffic connection
 set cbr_(1) [new Application/Traffic/CBR]
 $cbr_(1) set packetSize_ 512
 $cbr_(1) set interval_ 0.1

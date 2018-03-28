@@ -26,8 +26,7 @@ int main(void)
                	for(i=0;i<8;i++)
                	{
                		temp = SWITCH & (mask<<i);
-               		if(temp)
-               			count++;
+			count++;
                	}
 	        count = 8 - count;
 	        DISPLY = TB7SEG[count];

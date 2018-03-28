@@ -8,23 +8,20 @@ int main(void)
 	0b00111001, 0b01011110, 0b01111001, 0b01110001};
  
 	unsigned char DISPLY, mask, count, i;
-	unsigned char SWITCH, SW1, SW2, SW3, temp;
-	DDRD = 0xFF;
+	unsigned char SWITCH, SW1, SW2, temp;
+	
+        DDRD = 0xFF;
         DDRC = 0x00;
 	DDRB = 0x00;
 	while(1)
 	{
 		SW1 = PINB;
-                	SW1 = SW1 & 0x0F;
-                	SW1 = SW1 << 4; // 4-7 shitf 4 bit PORTB
-                	SW2 = PINC;
-                	SW2 = SW2 & 0x0F;     
-                	SWITCH = SW1+SW2;
-                        SW3 = PINB;
-                        SW3 = SW3 & 0b00100000;
-                        SW3 = SW3 >> 5;
-                        
-                       	mask = 0b00000001;
+                SW1 = SW1 & 0x0F;
+                SW1 = SW1 << 4; // 4 - 7 
+                SW2 = PINC;
+                SW2 = SW2 & 0x0F;
+                SWITCH = SW1+SW2;
+                mask = 0b00000001;
                	count = 0;
                	for(i=0;i<8;i++)
                	{
@@ -32,11 +29,8 @@ int main(void)
                		if(temp)
                			count++;
                	}
-          if(!SW3)
-	          count = 8 - count;    //low ==> high comment this line
+	        count = 8 - count;
 	        DISPLY = TB7SEG[count];
 	        PORTD = ~DISPLY;
 	}
 }
-
-

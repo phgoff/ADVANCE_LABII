@@ -1,0 +1,29 @@
+ABCD &
+0001
+000D
+
+ถ้าจะเอา C 
+ABCD >> 1
+0ABC
+0001
+000C
+
+
+0x28 -> 0010 1000
+DL = 1 : 8bits data length
+N  = 1 : 2line 
+F  = 0 :  5 x 8 dot 
+
+0x06 -> 0000 0110
+Entry Mode
+db2 -> 1
+i/D -> 1 : ทิศทาง
+
+0x0F -> 0000 1111
+display
+D : 1 แสดง
+C : 1 แสดง cursor
+B : 1 แสดงกระพริบ
+
+0x01 -> 0000 0001
+clear 
